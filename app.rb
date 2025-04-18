@@ -30,9 +30,9 @@ get("/:primary/:secondary") do
   @secondary = params.fetch("secondary")
 
   conversion_rate_url = "https://api.exchangerate.host/convert?from=#{@primary}&to=#{@secondary}&amount=1&access_key=" + er_key
-conv_raw_response = HTTP.get(conversion_rate_url)
-con_parsed_response = JSON.parse(conv_raw_response)
-@conversion = con_parsed_response.fetch("result")
+  conv_raw_response = HTTP.get(conversion_rate_url)
+  con_parsed_response = JSON.parse(conv_raw_response)
+  @conversion = con_parsed_response.fetch("result")
 
   erb(:secondary)
 end
