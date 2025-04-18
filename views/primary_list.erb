@@ -1,12 +1,15 @@
 <h1>Convert <%= @primary %></h1>
 
-<ul>
-<% @countries.each do |converts| %>
- <li>
-   <%= converts %>
-</li>
-<% end %>
-</ul>
+<dl>Go <a href="/">back</a>.</dl>
 
+<ul>
+  <% @countries.each do |currency| %>
+  <% if currency != @primary%>
+  <li>
+   <a href="/<%= @primary %>/<%= currency %>">Convert 1 <%= @primary %> to <%= currency %>...</a>
+  </li>
+<% end %>
+ <% end %> 
+</ul>
 
 <dl>Go <a href="/">back</a>.</dl>
